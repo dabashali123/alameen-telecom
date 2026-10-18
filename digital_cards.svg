@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- الخلفية الدائرية -->
+  <circle cx="200" cy="200" r="190" fill="url(#bg)" stroke="#eab308" stroke-width="8"/>
+
+  <!-- البطاقة الخلفية -->
+  <g transform="translate(90, 80) rotate(-10)">
+    <rect x="0" y="0" width="220" height="140" rx="15" fill="#334155" stroke="#94a3b8" stroke-width="4"/>
+    <!-- الشريط المغناطيسي -->
+    <rect x="0" y="25" width="220" height="25" fill="#0f172a"/>
+  </g>
+
+  <!-- البطاقة الأمامية الرقمية -->
+  <g transform="translate(70, 160) rotate(5)">
+    <rect x="0" y="0" width="240" height="150" rx="15" fill="url(#gold)" stroke="#ffffff" stroke-width="4"/>
+    
+    <!-- الشريحة الذكية -->
+    <rect x="25" y="40" width="45" height="35" rx="6" fill="#0f172a" opacity="0.8"/>
+    <line x1="25" y1="57" x2="70" y2="57" stroke="url(#gold)" stroke-width="2"/>
+    <line x1="47" y1="40" x2="47" y2="75" stroke="url(#gold)" stroke-width="2"/>
+    
+    <!-- علامة الدفع اللاسلكي (NFC) -->
+    <path d="M 175 45 A 25 25 0 0 1 175 75" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 190 37 A 40 40 0 0 1 190 83" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 205 29 A 55 55 0 0 1 205 91" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- خطوط تمثل تفاصيل البطاقة -->
+    <rect x="25" y="105" width="40" height="12" rx="4" fill="#0f172a" opacity="0.7"/>
+    <rect x="75" y="105" width="40" height="12" rx="4" fill="#0f172a" opacity="0.7"/>
+    <rect x="125" y="105" width="40" height="12" rx="4" fill="#0f172a" opacity="0.7"/>
+    <rect x="175" y="105" width="40" height="12" rx="4" fill="#0f172a" opacity="0.7"/>
+  </g>
+</svg>
