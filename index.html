@@ -1,1 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>الأمين تيليكوم - لخدمات السداد والدفع الإلكتروني</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+    }
+    #telecom-full-app {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 680px;
+      margin: 15px auto;
+      padding: 15px 12px 35px;
+      border-radius: 14px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 40px rgba(26, 107, 181, 0.1);
+    }
+    #telecom-full-app * {
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .top-telecom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a6bb5;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      color: #ffffff;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(26, 107, 181, 0.2);
+    }
+    .top-telecom-bar span:last-child {
+      color: #f5a623;
+      font-weight: 800;
+    }
+    .header-brand-box {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .brand-logo-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #f5a623;
+      margin: 0 auto 10px;
+      display: block;
+      box-shadow: 0 0 15px rgba(245, 166, 35, 0.2);
+    }
+    .header-brand-box h1 {
+      font-size: 26px;
+      font-weight: 900;
+      margin: 0 0 4px;
+      color: #1a6bb5;
+    }
+    .header-brand-box h2 {
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      color: #f5a623;
+      letter-spacing: 1px;
+    }
+    .header-brand-box p {
+      font-size: 12.5px;
+      color: #475569;
+      margin: 0;
+      font-weight: 700;
+    }
+    .intro-about-box {
+      background: linear-gradient(135deg, #1a6bb5, #114b82);
+      border: 2px solid #f5a623;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 1.9;
+      text-align: right;
+      white-space: pre-line;
+      box-shadow: 0 8px 20px rgba(26, 107, 181, 0.15);
+      font-weight: 700;
+    }
+    .intro-about-box strong {
+      color: #fde047;
+      font-size: 15px;
+    }
+    .location-badge-box {
+      background: #fffbeb;
+      border: 1px solid #fde047;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 15px;
+      font-size: 14.5px;
+      color: #b45309;
+      text-align: center;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .online-indicator-row {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    .online-status-txt {
+      color: #10b981;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .api-online-badge {
+      background: #10b981;
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 10px;
+    }
+    .video-preview-block {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+    .video-preview-block h4 {
+      margin: 0 0 10px;
+      color: #1a6bb5;
+      font-size: 13.5px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .yt-embed-box {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+    }
+    .yt-embed-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .telecom-nav-bar {
+      display: flex;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 5px;
+      margin-bottom: 15px;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .t-nav-btn {
+      flex: 1;
+      min-width: 80px;
+      background: transparent;
+      border: none;
+      color: #64748b;
+      padding: 10px 4px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .t-nav-btn.active-tab {
+      background: #1a6bb5;
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(26, 107, 181, 0.2);
+    }
+    .telecom-tab-section {
+      display: none;
+    }
+    .telecom-tab-section.show-tab {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .feed-acc-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 14px 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+    .feed-acc-header {
+      font-size: 15px;
+      font-weight: 900;
+      color: #1a6bb5;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feed-acc-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .acc-label-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 3px;
+    }
+    .acc-label-digits {
+      font-size: 16px;
+      font-weight: 900;
+      color: #1a6bb5;
+      direction: ltr !important;
+      text-align: right;
+    }
+    .btn-copy-gold {
+      background: #f5a623;
+      color: #ffffff;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(245, 166, 35, 0.2);
+    }
+    .btn-copy-gold:hover {
+      background: #e09312;
+      transform: translateY(-2px);
+    }
+    .btn-copy-gold svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    .btn-whatsapp-green {
+      background: #25d366;
+      color: #ffffff;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+    }
+    .btn-whatsapp-green:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+    }
+    .btn-whatsapp-green svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    .receipt-alert-msg {
+      background: #eff6ff;
+      border-right: 4px solid #1a6bb5;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 12.5px;
+      color: #1e293b;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+    .services-grid-nine {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .service-badge-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+    }
+    .service-badge-item:hover {
+      border-color: #1a6bb5;
+      box-shadow: 0 4px 12px rgba(26, 107, 181, 0.1);
+    }
+    .service-badge-item img.service-logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+      margin-bottom: 8px;
+      border: 2px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .service-badge-item span {
+      font-size: 26px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .service-badge-item p {
+      margin: 0;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .order-submit-btn {
+      width: 100%;
+      background: #25d366;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+    .package-download-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pkg-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+    .pkg-desc {
+      font-size: 11px;
+      color: #64748b;
+      margin: 0;
+      font-weight: 600;
+    }
+    .btn-download-excel {
+      background: #1a6bb5;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(26, 107, 181, 0.2);
+    }
+    .btn-download-excel:hover {
+      background: #114b82;
+      transform: translateY(-2px);
+    }
+    .btn-download-excel svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    .api-code-block {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      direction: ltr !important;
+      text-align: left;
+      font-family: monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+    .download-app-section {
+      background: linear-gradient(135deg, #1a6bb5, #114b82);
+      border-radius: 12px;
+      padding: 22px 15px;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(26, 107, 181, 0.2);
+    }
+    .download-app-section h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .download-app-section p {
+      margin: 0 0 18px;
+      font-size: 13px;
+      color: #e0f2fe;
+      font-weight: 600;
+    }
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      background: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      gap: 10px;
+      transition: transform 0.2s;
+    }
+    .store-btn:hover {
+      transform: translateY(-3px);
+    }
+    .store-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+    .store-btn div {
+      text-align: right;
+      line-height: 1.1;
+    }
+    .store-btn div span {
+      font-size: 9px;
+      display: block;
+      color: #cbd5e1;
+    }
+    .store-btn div strong {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .site-footer-box {
+      text-align: center;
+      padding: 20px 10px 10px;
+      margin-top: 25px;
+      border-top: 2px solid #e2e8f0;
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+    .site-footer-box strong {
+      color: #1e293b;
+      display: block;
+      font-size: 15px;
+      font-weight: 900;
+      margin-top: 8px;
+    }
+    .footer-phone {
+      color: #1a6bb5;
+      font-weight: 900;
+      font-size: 14px;
+      margin-top: 2px;
+      display: block;
+      direction: ltr;
+    }
+    .floating-wa-icon {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #ffffff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 999999;
+      text-decoration: none !important;
+      transition: transform 0.2s;
+    }
+    .floating-wa-icon:hover {
+      transform: scale(1.1);
+    }
+    .svg-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    #telecomToastNotice {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f5a623;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13.5px;
+      z-index: 9999999;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="telecom-full-app">
+
+    <!-- الشريط العلوي -->
+    <div class="top-telecom-bar">
+      <span>⚡ نظام الربط المباشر نشط</span>
+      <span>دعم فني: 781500003</span>
+    </div>
+
+    <!-- الشعار الرسمي بتنسيق جديد -->
+    <div class="header-brand-box">
+      <img src="IMG-20261014-WA0008.jpg" alt="الأمين تيليكوم" class="brand-logo-img">
+      <h1>الأمين تيليكوم</h1>
+      <h2>AL AMIN TELECOM</h2>
+      <p>لخدمات السداد والدفع الإلكتروني</p>
+    </div>
+
+    <!-- تبويبة العنوان المكبرة -->
+    <div class="location-badge-box">
+      <svg style="width:20px; height:20px; fill:currentColor; flex-shrink:0;" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>مقرنا الرئيسي: الحصبة - جولة الساعة - جوار شركة الصارم للصرافة.</span>
+    </div>
+
+    <!-- النبذة التعريفية -->
+    <div class="intro-about-box">
+الأمين تيليكوم: هو النظام التقني، الرائد والأكثر اعتماداً في اليمن لخدمات السداد، الدفع الإلكتروني، وتوفير باقات شبكات الاتصالات والإنترنت الرسمية (يمن موبايل، سبأفون، يو، واي، الثابت ADSL،والانترنت ADSL ويمن فورجي).
+نتميز بتقديم بوابات ربط مباشر (API) مصممة خصيصاً لأصحاب التطبيقات، المواقع، وشبكات ومراكز الاتصالات، لتمرير عمليات الشحن والتسديد الآلي بأعلى معايير السرعة والأمان والكفاءة التي تعمل على مدار 24 ساعة دون توقف.
+⚡ شعارنا الدائم: سرعة في الأداء، دقة في التحديث، وموثوقية نضعها بين يديك.
+    </div>
+
+    <div class="online-indicator-row">
+      <div class="online-status-txt">
+        <span>●</span>
+        <span>جميع بوابات الدفع تعمل بكفاءة على مدار 24 ساعة</span>
+      </div>
+      <span class="api-online-badge">API ONLINE</span>
+    </div>
+
+    <div class="video-preview-block">
+      <h4>🎥 الفيديو التعريفي لتطبيق الأمين تيليكوم:</h4>
+      <div class="yt-embed-box">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/ERKMSvWMhoc" title="الامين تيليكوم خيارك الأفضل"></iframe>
+      </div>
+    </div>
+
+    <div class="telecom-nav-bar">
+      <button class="t-nav-btn active-tab" onclick="showTelecomTab('services', this)" type="button">الخدمات والسداد</button>
+      <button class="t-nav-btn" onclick="showTelecomTab('packages', this)" type="button">استيراد الباقات</button>
+      <button class="t-nav-btn" onclick="showTelecomTab('accounts', this)" type="button">الحسابات البنكية</button>
+      <button class="t-nav-btn" onclick="showTelecomTab('support', this)" type="button">الدعم والتواصل</button>
+      <button class="t-nav-btn" onclick="showTelecomTab('api', this)" type="button">ربط API</button>
+    </div>
+
+    <!-- تبويب 1: الخدمات والسداد -->
+    <div class="telecom-tab-section show-tab" id="section-services">
+      <div class="feed-acc-box">
+        <div class="feed-acc-header">📱 شبكات الاتصالات والإنترنت المدعومة</div>
+        <div class="services-grid-nine">
+          <div class="service-badge-item">
+            <img src="yemenmobile_logo.jpeg" alt="يمن موبايل" class="service-logo-img">
+            <p>يمن موبايل</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="spafone_logo.jpg" alt="سبأفون" class="service-logo-img">
+            <p>سبأفون</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="A7f6bffD_400x400.jpg" alt="يو YOU" class="service-logo-img">
+            <p>يو YOU</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="images (9).jpeg" alt="الهاتف الثابت" class="service-logo-img">
+            <p>الهاتف الثابت</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="unnamed (1).jpg" alt="يمن نت ADSL" class="service-logo-img">
+            <p>يمن نت ADSL</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="unnamed (4).png" alt="يمن فورجي 4G" class="service-logo-img">
+            <p>يمن فورجي 4G</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="games_cards.svg" alt="ألعاب وبطاقات" class="service-logo-img">
+            <p>ألعاب وبطاقات</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="digital_cards.svg" alt="بطائق رقمية" class="service-logo-img">
+            <p>بطائق رقمية</p>
+          </div>
+          <div class="service-badge-item">
+            <img src="flash_wallet.svg" alt="التغذية المباشرة عبر المحافظ" class="service-logo-img">
+            <p style="font-size: 11px;">التغذية المباشرة عبر المحافظ</p>
+          </div>
+        </div>
+
+        <a class="order-submit-btn" href="https://wa.me/967781500004?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D9%86%20%D8%AA%D9%8A%D9%84%D9%8A%D9%83%D9%88%D9%85" target="_blank">
+          <span>للمزيد من المعلومات 781500004</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- تبويب 2: استيراد الباقات -->
+    <div class="telecom-tab-section" id="section-packages">
+      <div class="feed-acc-box">
+        <div class="feed-acc-header">📁 استيراد وتنزيل كشوفات الباقات المحدثة</div>
+        <p style="font-size:12.5px; color:#64748b; margin-bottom:14px; line-height:1.6; font-weight:700;">
+          اختر الكشف المناسب واضغط على تحميل لاستيراد أحدث الأسعار والباقات المعتمدة مباشرة:
+        </p>
+
+        <div class="package-download-card">
+          <div>
+            <div class="pkg-title">كشف باقات يمن موبايل</div>
+            <p class="pkg-desc">ملف الاستيراد المحدث لخدمات يمن موبايل</p>
+          </div>
+          <a class="btn-download-excel" href="yemen_mobile_packages.xlsx" download>
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            تحميل
+          </a>
+        </div>
+
+        <div class="package-download-card">
+          <div>
+            <div class="pkg-title">كشف باقات سبأفون</div>
+            <p class="pkg-desc">ملف الاستيراد المحدث لخدمات سبأفون</p>
+          </div>
+          <a class="btn-download-excel" href="spafone_packages.xlsx" download>
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            تحميل
+          </a>
+        </div>
+
+        <div class="package-download-card">
+          <div>
+            <div class="pkg-title">كشف باقات شركة يو (مع ماكس)</div>
+            <p class="pkg-desc">ملف الاستيراد المحدث لخدمات يو</p>
+          </div>
+          <a class="btn-download-excel" href="YOU_packages.xlsx" download>
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            تحميل
+          </a>
+        </div>
+
+        <div class="package-download-card">
+          <div>
+            <div class="pkg-title">كشف باقات يمن فورجي أرضي</div>
+            <p class="pkg-desc">ملف الاستيراد المحدث لخدمات 4G</p>
+          </div>
+          <a class="btn-download-excel" href="yemen_4g_packages.xlsx" download>
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            تحميل
+          </a>
+        </div>
+
+        <div class="package-download-card">
+          <div>
+            <div class="pkg-title">كشف باقات شركة واي</div>
+            <p class="pkg-desc">ملف الاستيراد المحدث لخدمات واي</p>
+          </div>
+          <a class="btn-download-excel" href="Y_packages.xlsx" download>
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            تحميل
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- تبويب 3: الحسابات البنكية -->
+    <div class="telecom-tab-section" id="section-accounts">
+      <div class="feed-acc-box">
+        <div class="feed-acc-header">🏦 أرقام حسابات التغذية والإيداع المعتمدة</div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (2).png" alt="محفظة جيب" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة جيب</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (10).jpeg" alt="محفظة فلوسك" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة فلوسك</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="IMG-20261014-WA0010.jpg" alt="محفظة جوالي" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة جوالي</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (3).png" alt="محفظة يمن والت" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة يمن والت</div><div class="acc-label-digits">781500003</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('781500003')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (4).png" alt="محفظة كاش" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة كاش</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (5).png" alt="محفظة وان كاش" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة وان كاش</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="unnamed (5).png" alt="محفظة ايزي" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">محفظة ايزي</div><div class="acc-label-digits">774460988</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('774460988')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (6).png" alt="ذي يزن للصرافة" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">ذي يزن للصرافة</div><div class="acc-label-digits">12431744</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('12431744')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (7).png" alt="كريمي شمال يمني" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">كريمي شمال يمني</div><div class="acc-label-digits">3062281428</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('3062281428')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (7).png" alt="كريمي جنوب يمني" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">كريمي جنوب يمني</div><div class="acc-label-digits">3142117222</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('3142117222')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (7).png" alt="كريمي شمال سعودي" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">كريمي شمال سعودي</div><div class="acc-label-digits">3045228435</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('3045228435')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="feed-acc-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images (7).png" alt="كريمي جنوب سعودي" style="width: 35px; height: 35px; border-radius: 8px; object-fit: cover; border: 1px solid #e2e8f0;">
+            <div><div class="acc-label-title">كريمي جنوب سعودي</div><div class="acc-label-digits">3170028693</div></div>
+          </div>
+          <button class="btn-copy-gold" onclick="clipCopy('3170028693')" type="button">
+            نسخ
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+
+        <div class="receipt-alert-msg">
+          ⚠️ <strong>تنبيه هام:</strong> بعد تحويل المبلغ يرجى إرسال صورة سند التحويل مباشرة للواتساب لاعتماد التغذية فوراً.
+        </div>
+      </div>
+    </div>
+
+    <!-- تبويب 4: الدعم والتواصل -->
+    <div class="telecom-tab-section" id="section-support">
+      <div class="feed-acc-box">
+        <div class="feed-acc-header">💬 ممثلو خدمة العملاء والدعم الفني المباشر</div>
+        
+        <div class="feed-acc-card">
+          <div><div class="acc-label-title">الإدارة العامة والمبيعات</div><div class="acc-label-digits">+967 781500003</div></div>
+          <a class="btn-whatsapp-green" href="https://wa.me/967781500003" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            واتساب
+          </a>
+        </div>
+        <div class="feed-acc-card">
+          <div><div class="acc-label-title">خدمة العملاء والعمليات</div><div class="acc-label-digits">+967 781500004</div></div>
+          <a class="btn-whatsapp-green" href="https://wa.me/967781500004" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            واتساب
+          </a>
+        </div>
+        <div class="feed-acc-card">
+          <div><div class="acc-label-title">الدعم الفني وربط الأنظمة</div><div class="acc-label-digits">+967 774460988</div></div>
+          <a class="btn-whatsapp-green" href="https://wa.me/967774460988" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- تبويب 5: ربط API المباشر -->
+    <div class="telecom-tab-section" id="section-api">
+      <div class="feed-acc-box">
+        <div class="feed-acc-header">🔌 خدمات الربط البرمجي (API Documentation)</div>
+        <p style="font-size:13px; color:#64748b; line-height:1.7; margin:0; font-weight:700;">
+          توفر شبكة <strong>الأمين تيليكوم</strong> بوابة API مخصصة لأصحاب التطبيقات، المواقع الإلكترونية، ومراكز الاتصالات لتمرير عمليات الشحن التلقائي بسرعة فائقة وحماية متطورة.
+        </p>
+        <div class="api-code-block">
+          POST /api/v1/recharge<br>
+          Authorization: Bearer YOUR_API_KEY<br>
+          Content-Type: application/json
+        </div>
+        <div style="text-align:center; margin-top:15px;">
+          <a class="btn-copy-gold" href="https://wa.me/967774460988?text=%D8%B7%D9%84%D8%A8%20%D9%81%D8%AA%D8%AD%20%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%AA%D8%A7%D8%AC%D8%1%20%D9%88%D8%B1%D8%A8%D8%B7%20API" target="_blank" style="display:inline-flex; padding:11px 22px; font-size:13.5px;">طلب تفعيل حساب تاجر وربط API</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم تحميل التطبيق (المتاجر) -->
+    <div class="download-app-section">
+      <h3>حمل تطبيق الأمين تيليكوم</h3>
+      <p>أسرع وأسهل طريقة لإنجاز معاملاتك وربط جميع الأنظمة والتطبيقات</p>
+      <div class="store-buttons">
+        <a href="https://play.google.com/store/apps" class="store-btn" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.5.4-.8.8-.6l15.8 8.1c.4.2.4.8 0 1l-15.8 8.1c-.4.2-.8-.1-.8-.6z"/></svg>
+          <div>
+            <span>احصل عليه من</span>
+            <strong>Google Play</strong>
+          </div>
+        </a>
+        <a href="https://www.apple.com/app-store/" class="store-btn" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M16.36 10.11c-.02-1.74 1.4-2.58 1.47-2.62-.8-1.16-2.06-1.33-2.5-1.35-1.06-.11-2.07.63-2.61.63-.54 0-1.38-.61-2.27-.59-1.15.02-2.22.68-2.82 1.72-1.22 2.13-.31 5.28.88 7.02.58.85 1.25 1.8 2.16 1.76.88-.04 1.22-.57 2.27-.57 1.05 0 1.36.57 2.29.55.94-.02 1.52-.86 2.09-1.7.67-.97 1.07-1.92 1.09-1.97-.02-.01-1.84-.71-1.87-2.88zM14.65 6.6c.49-.61.82-1.44.73-2.28-.72.03-1.59.49-2.1 1.1-.46.54-.84 1.4-.73 2.22.81.06 1.61-.44 2.1-1.04z"/></svg>
+          <div>
+            <span>حمله من</span>
+            <strong>App Store</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- نهاية الصفحة (Footer) -->
+    <div class="site-footer-box">
+      جميع الحقوق محفوظة ©2026 لــ الأمين تيليكوم لخدمات السداد والدفع الالكتروني<br>
+      تصميم:<br>
+      <strong>م/ علي عبدالرحمن قاسم دباش</strong>
+      <span class="footer-phone">775553994</span>
+    </div>
+
+  </div>
+
+  <a class="floating-wa-icon" href="https://wa.me/967781500004" target="_blank" title="تواصل واتساب">
+    <svg class="svg-icon" style="width:28px; height:28px;" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <div id="telecomToastNotice">تم نسخ الرقم بنجاح ✓</div>
+
+  <script>
+    function showTelecomTab(key, btn) {
+      var buttons = document.querySelectorAll('.t-nav-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active-tab');
+      }
+      btn.classList.add('active-tab');
+
+      var sections = document.querySelectorAll('.telecom-tab-section');
+      for (var j = 0; j < sections.length; j++) {
+        sections[j].classList.remove('show-tab');
+      }
+      var targetSec = document.getElementById('section-' + key);
+      if (targetSec) {
+        targetSec.classList.add('show-tab');
+      }
+    }
+
+    function clipCopy(val) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(val).then(showToastAlert).catch(function() {
+          fallbackCopyTool(val);
+        });
+      } else {
+        fallbackCopyTool(val);
+      }
+    }
+
+    function fallbackCopyTool(val) {
+      var ta = document.createElement("input");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      ta.value = val;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToastAlert();
+      } catch (e) {
+        alert("الرقم: " + val);
+      }
+      document.body.removeChild(ta);
+    }
+
+    function showToastAlert() {
+      var toast = document.getElementById("telecomToastNotice");
+      toast.style.display = "block";
+      setTimeout(function() {
+        toast.style.display = "none";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
 
